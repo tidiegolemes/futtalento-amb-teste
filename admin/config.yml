@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: tidiegolemes/Futtalento # Substitua pelo caminho exato do seu repo
+  branch: main # Ou 'master', dependendo da sua branch principal
+
+media_folder: "noticias/imagens" # Onde as fotos das notícias serão salvas
+public_folder: "/noticias/imagens"
+
+collections:
+  - name: "noticias"
+    label: "Notícias"
+    folder: "noticias/posts" # Pasta onde os arquivos de texto serão criados
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Data de Publicação", name: "date", widget: "datetime"}
+      - {label: "Imagem de Capa", name: "image", widget: "image"}
+      - {label: "Corpo da Notícia", name: "body", widget: "markdown"}
